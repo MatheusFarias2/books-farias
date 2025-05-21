@@ -1,7 +1,7 @@
 document.getElementById("formLogin").addEventListener("submit", e => {
   e.preventDefault();
-  const email = document.getElementById("email").value;
-  const senha = document.getElementById("senha").value;
+  const email = document.getElementById("loginEmail").value;
+  const senha = document.getElementById("loginSenha").value;
 
   auth.signInWithEmailAndPassword(email, senha)
     .then(() => {
