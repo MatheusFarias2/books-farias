@@ -1,0 +1,217 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefbf3;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Layout geral */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #f4e28d;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+nav {
+  background-color: #fff3b0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: #fceeb5;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.livro-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.livro-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.livro-card h3 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.livro-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.livro-card button {
+  margin-top: 10px;
+  background-color: #f4e28d;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.livro-card button:hover {
+  background-color: #e7d76f;
+}
+
+.carrinho {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.carrinho h2 {
+  margin-bottom: 10px;
+}
+
+.carrinho-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.carrinho-item button {
+  background: #ff6b6b;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-contato {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-contato h2 {
+  margin-bottom: 10px;
+}
+
+.form-contato input,
+.form-contato textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-contato button {
+  background-color: #f4e28d;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-contato button:hover {
+  background-color: #e7d76f;
+}
+
+#btnVoltarTopo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f4e28d;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .livro-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .carrinho,
+  .form-contato {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .carrinho-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}

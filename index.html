@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja de Livros</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Loja de Livros</h1>
+    <nav>
+      <select id="filtro-categoria" onchange="filtrarPorCategoria()">
+        <option value="todas">Todas</option>
+        <option value="Ficção">Ficção</option>
+        <option value="Clássico">Clássico</option>
+        <option value="Fantasia">Fantasia</option>
+        <option value="Estratégia">Estratégia</option>
+        <option value="Infantil">Infantil</option>
+      </select>
+      <button onclick="logout()">Logout</button>
+    </nav>
+    <p id="bemvindo"></p>
+  </header>
+
+  <main>
+    <section id="lista-livros" class="lista-livros">
+      <!-- Livros aparecem aqui -->
+    </section>
+
+    <aside>
+      <h2>Carrinho</h2>
+      <div id="carrinho" class="carrinho">
+        <!-- Itens do carrinho -->
+      </div>
+      <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2025 Loja de Livros</p>
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn-topo">Voltar ao topo</button>
+  </footer>
+</body>
+</html>
