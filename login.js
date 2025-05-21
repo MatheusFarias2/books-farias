@@ -1,7 +1,7 @@
 document.getElementById("formLogin").addEventListener("submit", e => {
   e.preventDefault();
-  const email = document.getElementById("loginEmail").value;
-  const senha = document.getElementById("loginSenha").value;
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
 
   auth.signInWithEmailAndPassword(email, senha)
     .then(() => {
@@ -15,6 +15,6 @@ document.getElementById("formLogin").addEventListener("submit", e => {
 
 document.getElementById("formCadastro").addEventListener("submit", e => {
   e.preventDefault();
-  const email = document.getElementById("cadastro-email").value;
-  const senha = document.getElementById("cadastro-senha").value;
+  const email = document.getElementById("loginEmail").value;
+  const senha = document.getElementById("loginSenha").value;
 });
