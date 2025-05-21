@@ -76,7 +76,7 @@ main {
 
 .lista-livros {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   flex: 3;
   max-width: 900px;
@@ -233,7 +233,7 @@ footer p {
   background-color: #222;
 }
 
-/* Login page */
+/* Login */
 .login-container {
   max-width: 400px;
   margin: 3rem auto;
@@ -285,169 +285,88 @@ footer p {
   background-color: var(--verde);
   color: var(--branco);
 }
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* Corpo */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fdfaf5;
-  color: #333;
-  padding: 1rem;
-}
-
-/* Cabeçalho */
-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-header h1 {
-  font-size: 2rem;
-  color: #c4a300;
-}
-
-/* Container de livros */
-.livros-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-}
-
-/* Card de livro */
-.livro {
-  background-color: #fffbe8;
-  border: 1px solid #e0dcbf;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-.livro img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-}
-
-.livro h3 {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-}
-
-/* Botão */
-button {
-  background-color: #e6c800;
-  color: #000;
-  border: none;
-  padding: 0.6rem 1rem;
-  margin-top: 0.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #d0b800;
-}
-
-/* Carrinho */
-#carrinho {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 12px;
-  max-width: 300px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  z-index: 100;
-}
-
-#carrinho h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-#carrinho .item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Contato */
-#contato {
-  background: #fffbe8;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-top: 2rem;
-}
-
-#contato h2 {
-  margin-bottom: 0.5rem;
-}
-
-/* Formulários */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  max-width: 400px;
-  margin: auto;
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .livros-container {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  }
-
-  body {
-    padding: 0.5rem;
-  }
-
-  #carrinho {
-    max-width: 95%;
-    bottom: 0.5rem;
-    right: 0.5rem;
-  }
-
-  form {
-    width: 100%;
+/* Responsividade aprimorada */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
     padding: 1rem;
+  }
+
+  aside {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  nav select,
+  nav button {
+    flex: 1 1 45%;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .lista-livros {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  aside {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .livros-container {
-    grid-template-columns: 1fr;
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav select,
+  nav button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
   }
 
   .livro {
     font-size: 0.9rem;
+    padding: 0.8rem;
   }
 
-  button {
-    padding: 0.5rem;
+  .livro h3 {
+    font-size: 1rem;
+  }
+
+  .livro p {
+    font-size: 1rem;
+  }
+
+  .capa-livro {
+    max-width: 120px;
+  }
+
+  aside button {
     font-size: 0.9rem;
+    padding: 0.6rem;
   }
 
   footer {
     font-size: 0.8rem;
   }
 }
-
