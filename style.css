@@ -375,4 +375,40 @@ footer p {
     grid-template-columns: 1fr !important;
   }
 }
+@media (max-width: 480px) {
+  /* Main em coluna, para carrinho ficar abaixo */
+  main {
+    flex-direction: column !important;
+    padding: 1rem !important;
+  }
+
+  /* Lista de livros em grid de 1 coluna */
+  .lista-livros {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Ajuste do tamanho dos livros para preencher a largura */
+  .livro {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Ajustes menores para capa e texto */
+  .capa-livro {
+    max-width: 120px !important;
+    margin: 0 auto 1rem auto !important;
+  }
+
+  .livro h3 {
+    font-size: 1rem !important;
+  }
+
+  .livro p {
+    font-size: 1rem !important;
+  }
+}
 
