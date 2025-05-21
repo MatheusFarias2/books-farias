@@ -369,4 +369,10 @@ footer p {
   footer {
     font-size: 0.8rem;
   }
+
+  /* Correção para lista de livros no celular */
+  .lista-livros {
+    grid-template-columns: 1fr !important;
+  }
 }
+
