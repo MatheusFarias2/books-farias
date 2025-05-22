@@ -1,6 +1,5 @@
 document.getElementById("formCadastro").addEventListener("submit", function (e) {
   e.preventDefault();
-
   const nome = document.getElementById("nome").value;
   const email = document.getElementById("cadastroEmail").value.trim();
   const senha = document.getElementById("cadastroSenha").value;
@@ -9,21 +8,24 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
     .then(userCredential => {
       const user = userCredential.user;
 
-      // Atualiza o displayName do usuário com o nome informado
+      // Atualiza o nome no perfil
       return user.updateProfile({
         displayName: nome
       }).then(() => {
-        // Depois que o nome for salvo no perfil, grava no Firestore
+        // Salva no Firestore
         return db.collection("users").doc(user.uid).set({
+          nome: nome,
           email: user.email,
-          nome: nome, // também salva no Firestore, se quiser
           createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
+      }).then(() => {
+        // Envia e-mail de verificação
+        return user.sendEmailVerification();
+      }).then(() => {
+        alert("Cadastro realizado! Verifique seu e-mail antes de fazer login.");
+        auth.signOut(); // Faz logout forçado até o usuário confirmar
+        window.location.href = "login.html";
       });
-    })
-    .then(() => {
-      alert("Cadastro realizado com sucesso!");
-      window.location.href = "login.html";
     })
     .catch(error => {
       console.error("Erro no cadastro:", error);
