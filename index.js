@@ -10,7 +10,12 @@ let carrinho = [];
 
 auth.onAuthStateChanged(user => {
   if (user) {
-    document.getElementById("bemvindo").innerText = `Bem-vindo, ${user.email}`;
+    if (user.displayName) {
+        document.getElementById("bemvindo").innerText = `Bem-vindo, ${user.displayName}`;
+    } 
+    else {
+        document.getElementById("bemvindo").innerText = `Bem-vindo, ${user.email}`;
+    };
     mostrarLivros(livros);
     mostrarCarrinho();
   } else {
